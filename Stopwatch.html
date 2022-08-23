@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2022 by anonymous (http://jsbin.com/lalosayepa/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style type='text/css'>
+    body{
+      display:grid;
+      background-color:orange;
+    }
+    .headertext{
+      padding-top:25%;
+      font-size:43pt;
+      margin:auto;      
+    }
+    
+    #timertext{
+      font-size:64pt;
+      margin:auto;
+      font-weight:bold;
+      font-family: 'Saira Semi Condensed', sans-serif;
+    }
+    .buttonpad{
+      margin:auto;
+    }
+    
+    .buttonpad button{
+      padding:10px;
+      width: 120px;
+      text-align: center;
+      border-radius:5px;
+      font-weight:bold;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='headertext'>Javascript Stop Watch</div>
+
+<div id="timertext">00:00</div>
+  
+ <div class="buttonpad">
+   <button id="start" >Start</button>
+   <button id="stop" >Stop</button>
+   <button id="reset">Reset</button>
+ </div>
+  <script type='text/javascript'>
+   let currentTime= new Date().getTime();
+   var stopId;
+    
+   document.getElementById('start').onclick=()=>{
+      currentTime= new Date().getTime();
+      stopId =  setInterval(writeTime,100);
+     
+    };
+    
+    function writeTime(){
+      var mTime= new Date().getTime();
+     var difference = mTime-currentTime;
+     var mindiff = Math.floor(difference/1000/60);
+     difference = difference-(mindiff*1000*60)
+     var millidiff= Math.floor(difference/1000);
+      difference = Math.floor((difference -(millidiff *1000))/100);
+     document.getElementById('timertext').innerHTML= (''+mindiff).padStart(2,'0')+":"+(''+millidiff).padStart(2,'0')+":"+(''+difference).padStart(2,'0');
+    }
+    
+    document.getElementById('stop').onclick=() => {
+      clearInterval(stopId);
+      console.log('stopped');
+    };
+    
+    
+    
+    document.getElementById('reset').onclick= ()=>{
+      clearInterval(stopId);
+      document.getElementById('timertext').innerHTML="00:00";
+      console.log('RESET COMPLETE')
+    };
+    
+  </script>
+</body>
+</html>
