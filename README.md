@@ -6,4 +6,4 @@ I'll be keeping a small log in the readme of the completed projects in here.
 |------------------|--------------------------|
 | StopWatch        | Date class. SetInterval. |
 | Digital Clock    | Date class. SetInterval. |
-| Countdown Tiemr  | Date class. SetInterval. |
+| Countdown Timer  | Date class. SetInterval. |
