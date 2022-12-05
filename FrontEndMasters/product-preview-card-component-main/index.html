@@ -1,73 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Frontend Mentor | Product preview card component</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
-      :root {
-        --color-darkcyan: hsl(158, 36%, 37%);
-        --color-cream: hsl(30, 38%, 92%);
-        --color-verydarkblue: hsl(212, 21%, 14%);
-        --color-darkgrayishblue: hsl(228, 12%, 48%);
-        --color-white: hsl(0, 0%, 100%);
-      }
-      body {
-        display: flex;
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="stylesheet" />
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
+
+    :root {
+      --color-darkcyan: hsl(158, 36%, 37%);
+      --color-cream: hsl(30, 38%, 92%);
+      --color-verydarkblue: hsl(212, 21%, 14%);
+      --color-darkgrayishblue: hsl(228, 12%, 48%);
+      --color-white: hsl(0, 0%, 100%);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      background-color: var(--color-cream);
+      height: 100vh;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .box {
+      display: flex;
+      flex-direction: row;
+      width: 50vw;
+      border-radius: 5%;
+    }
+
+    .imagepane {
+      width: 50%;
+      min-width: 250px;
+    }
+
+    .imagepane img {
+      max-width: 100%;
+      height: auto;
+      min-height:50vh;
+      border-top-left-radius: 5%;
+      border-bottom-left-radius: 5%;
+    }
+
+    .rightbox {
+      width: 50%;
+      min-width: 250px;
+      border-top-right-radius: 5%;
+      border-bottom-right-radius: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-white);
+    }
+
+    .salesgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+        "title title"
+        "product product"
+        "desc desc"
+        "nprice oprice"
+        "button button";
+      row-gap: 1em;
+      width: 80%;
+    }
+
+    .productname {
+      grid-area: product;
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: 2.5em;
+    }
+
+    .boxtitle {
+      grid-area: title;
+      font-family: Montserrat, sans-serif;
+      font-weight: 500;
+      color: var(--color-darkgrayishblue);
+    }
+
+    .productdesc {
+      grid-area: desc;
+      font-family: Montserrat, sans-serif;
+      font-weight: 500;
+      color: var(--color-darkgrayishblue);
+    }
+
+    .newprice {
+      grid-area: nprice;
+      font-family: Fraunces, sans-serif;
+      font-weight: 500;
+      color: var(--color-darkcyan);
+      font-size: 2.5em;
+    }
+
+    .oldprice {
+      grid-area: oprice;
+      justify-self: center;
+      align-self: center;
+      font-family: Fraunces, sans-serif;
+      font-size: 1em;
+      text-decoration: line-through;
+    }
+
+    .calltoactionbtn {
+      grid-area: button;
+      padding: 15px 10px 15px 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: var(--color-darkcyan);
+      color: var(--color-white);
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+      body{
+        display:flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        background-color: var(--color-cream);
-        height: 100vh;
-      }
-
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
+        justify-items: center;
       }
       .box {
         display: flex;
-        flex-direction: row;
-        width: 50vw;
-        border-radius: 5%;
-      }
-      .imagepane {
-        width: 50%;
-      }
-      .imagepane img {
-        max-width: 100%;
-        height: auto;
+        width:80vw;
+        flex-direction: column;
+        border-top-left-radius: 5%;
         border-top-left-radius: 5%;
         border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+      }
+
+      .imagepane {
+        width: 100%;
+        height:auto;
+      }
+      .imagepane img {
+        min-height: none;
+        border-top-right-radius: 5%;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
       }
       .rightbox {
-        width: 50%;
-        border-top-right-radius: 5%;
+        width: 80vw;
+        min-width:400px;
+        height:40vh;
+        border-top-right-radius: 0%;
+        border-bottom-left-radius: 5%;
         border-bottom-right-radius: 5%;
         display: flex;
         flex-direction: column;
@@ -75,106 +178,40 @@
         align-items: center;
         background-color: var(--color-white);
       }
-      .salesgrid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:
-          "title title"
-          "product product"
-          "desc desc"
-          "nprice oprice"
-          "button button";
-        row-gap: 1em;
-        width: 80%;
-      }
-      .productname {
-        grid-area: product;
-        font-family: Montserrat, sans-serif;
-        font-weight: 700;
-        font-size: 2.5em;
-      }
-      .boxtitle {
-        grid-area: title;
-        font-family: Montserrat, sans-serif;
-        font-weight: 500;
-        color: var(--color-darkgrayishblue);
-      }
-      .productdesc {
-        grid-area: desc;
-        font-family: Montserrat, sans-serif;
-        font-weight: 500;
-        color: var(--color-darkgrayishblue);
-      }
-      .newprice {
-        grid-area: nprice;
-        font-family: Fraunces, sans-serif;
-        font-weight: 500;
-        color: var(--color-darkcyan);
-        font-size: 2.5em;
-      }
-      .oldprice {
-        grid-area: oprice;
-        justify-self: center;
-        align-self: center;
-        font-family: Fraunces, sans-serif;
-        font-size: 1em;
-        text-decoration: line-through;
-      }
       .calltoactionbtn {
-        grid-area: button;
-        padding: 15px 10px 15px 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: var(--color-darkcyan);
-        color: var(--color-white);
-        font-size: 1em;
-        font-weight: bold;
-      }
+      margin:1em;
+    }
+    }
+  </style>
+</head>
 
-      @media only screen and (max-width: 600px) {
-
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <div class="imagepane">
-        <picture>
-          <source
-            media="(max-width: 414px)"
-            srcset="images/image-product-mobile.jpg"
-          />
-          <source
-            media="(min-width: 415px)"
-            srcset="images/image-product-desktop.jpg"
-          />
-          <img
-            src="images/image-product-desktop.jpg"
-            alt="Image of Gabrielle Essence Eau De Parfum Bottle"
-          />
-        </picture>
-      </div>
-      <div class="rightbox">
-        <div class="salesgrid">
-          <span class="boxtitle">PERFUME</span>
-          <span class="productname">Gabrielle Essence Eau De Parfum</span>
-          <span class="productdesc"
-            >A floral, solar and voluptuous interpretation composed by Olivier
-            Polge, Perfumer-Creator for the House of CHANEL.</span
-          >
-          <span class="newprice">$149.99</span>
-          <span class="oldprice">$169.99</span>
-          <button class="calltoactionbtn">Add to Cart</button>
-        </div>
+<body>
+  <div class="box">
+    <div class="imagepane">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/image-product-mobile.jpg" />
+        <source srcset="images/image-product-desktop.jpg" />
+        <img src="images/image-product-desktop.jpg" alt="Image of Gabrielle Essence Eau De Parfum Bottle" />
+      </picture>
+    </div>
+    <div class="rightbox">
+      <div class="salesgrid">
+        <span class="boxtitle">PERFUME</span>
+        <span class="productname">Gabrielle Essence Eau De Parfum</span>
+        <span class="productdesc">A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.</span>
+        <span class="newprice">$149.99</span>
+        <span class="oldprice">$169.99</span>
+        <button class="calltoactionbtn">Add to Cart</button>
       </div>
     </div>
+  </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Olumuyiwa Bayo Saka</a>.
-    </div>
-  </body>
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="#">Olumuyiwa Bayo Saka</a>.
+  </div>
+</body>
+
 </html>
