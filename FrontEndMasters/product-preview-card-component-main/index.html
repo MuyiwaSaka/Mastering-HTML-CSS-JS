@@ -18,20 +18,22 @@
     @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
 
     :root {
-      --color-darkcyan: hsl(158, 36%, 37%);
-      --color-cream: hsl(30, 38%, 92%);
-      --color-verydarkblue: hsl(212, 21%, 14%);
-      --color-darkgrayishblue: hsl(228, 12%, 48%);
-      --color-white: hsl(0, 0%, 100%);
+      --col-darkcyan: hsl(158, 36%, 37%);
+      --col-cream: hsl(30, 38%, 92%);
+      --col-verydarkblue: hsl(212, 21%, 14%);
+      --col-darkgrayishblue: hsl(228, 12%, 48%);
+      --col-white: hsl(0, 0%, 100%);
+
+      --ft-mont: Montserrat, sans-serif;
     }
 
     body {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      place-content: center;
       align-items: center;
       font-size: 14px;
-      background-color: var(--color-cream);
+      background-color: var(--col-cream);
       height: 100vh;
     }
 
@@ -45,35 +47,34 @@
     }
 
     .box {
-      display: flex;
-      flex-direction: row;
-      width: 50vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 600px;
       border-radius: 5%;
     }
 
     .imagepane {
       width: 50%;
-      min-width: 250px;
+      min-width: 300px;
     }
 
     .imagepane img {
       max-width: 100%;
       height: auto;
-      min-height:50vh;
+      min-height: 50vh;
       border-top-left-radius: 5%;
       border-bottom-left-radius: 5%;
     }
 
     .rightbox {
-      width: 50%;
-      min-width: 250px;
+      min-width: 300px;
       border-top-right-radius: 5%;
       border-bottom-right-radius: 5%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: var(--color-white);
+      background-color: var(--col-white);
     }
 
     .salesgrid {
@@ -86,37 +87,39 @@
         "desc desc"
         "nprice oprice"
         "button button";
-      row-gap: 1em;
+      gap: 1rem;
       width: 80%;
     }
 
     .productname {
       grid-area: product;
-      font-family: Montserrat, sans-serif;
+      font-family: var(--ft-mont);
       font-weight: 700;
-      font-size: 2.5em;
+      font-size: 2rem;
     }
 
     .boxtitle {
       grid-area: title;
-      font-family: Montserrat, sans-serif;
+      font-family: var(--ft-mont);
       font-weight: 500;
-      color: var(--color-darkgrayishblue);
+      color: var(--col-darkgrayishblue);
+      text-transform: uppercase;
+      letter-spacing: 5px;
     }
 
     .productdesc {
       grid-area: desc;
-      font-family: Montserrat, sans-serif;
+      font-family: var(--ft-mont);
       font-weight: 500;
-      color: var(--color-darkgrayishblue);
+      color: var(--col-darkgrayishblue);
     }
 
     .newprice {
       grid-area: nprice;
       font-family: Fraunces, sans-serif;
       font-weight: 500;
-      color: var(--color-darkcyan);
-      font-size: 2.5em;
+      color: var(--col-darkcyan);
+      font-size: 2rem;
     }
 
     .oldprice {
@@ -124,63 +127,62 @@
       justify-self: center;
       align-self: center;
       font-family: Fraunces, sans-serif;
-      font-size: 1em;
+      font-size: 1rem;
       text-decoration: line-through;
     }
 
     .calltoactionbtn {
       grid-area: button;
-      padding: 15px 10px 15px 10px;
+      padding: 10px 15px;
       border-radius: 5px;
       border: none;
-      background-color: var(--color-darkcyan);
-      color: var(--color-white);
-      font-size: 1em;
+      background-color: var(--col-darkcyan);
+      color: var(--col-white);
+      font-size: 1rem;
       font-weight: bold;
     }
 
     @media only screen and (max-width: 600px) {
-      body{
-        display:flex;
+      body {
+        display: flex;
         flex-direction: column;
         justify-items: center;
-      }
-      .box {
-        display: flex;
-        width:80vw;
-        flex-direction: column;
-        border-top-left-radius: 5%;
-        border-top-left-radius: 5%;
-        border-bottom-left-radius: 5%;
-        border-bottom-right-radius: 5%;
+        margin: 1rem;
       }
 
-      .imagepane {
-        width: 100%;
-        height:auto;
-      }
-      .imagepane img {
-        min-height: none;
+      .box {
+        display: flex;
+        width: none;
+        flex-direction: column;
+        border-top-left-radius: 5%;
         border-top-right-radius: 5%;
         border-bottom-left-radius: 0%;
         border-bottom-right-radius: 0%;
       }
+
+      .imagepane {
+        width: 100%;
+        min-width: 325px;
+        height: auto;
+      }
+
+      .imagepane img {
+        display: block;
+        width: 100%;
+        min-height: 0;
+        border-top-right-radius: 5%;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+      }
+
       .rightbox {
-        width: 80vw;
-        min-width:400px;
-        height:40vh;
         border-top-right-radius: 0%;
         border-bottom-left-radius: 5%;
         border-bottom-right-radius: 5%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-white);
+        padding: 1em;
       }
-      .calltoactionbtn {
-      margin:1em;
-    }
+
+      .calltoactionbtn {}
     }
   </style>
 </head>
@@ -196,7 +198,7 @@
     </div>
     <div class="rightbox">
       <div class="salesgrid">
-        <span class="boxtitle">PERFUME</span>
+        <span class="boxtitle">Perfume</span>
         <span class="productname">Gabrielle Essence Eau De Parfum</span>
         <span class="productdesc">A floral, solar and voluptuous interpretation composed by Olivier
           Polge, Perfumer-Creator for the House of CHANEL.</span>
