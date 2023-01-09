@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
 :root {
   --color-cyan: hsl(179, 62%, 43%);
   --color-lightcyan: hsl(179, 62%, 48%);
@@ -12,33 +13,33 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  place-items:center;
   height: 100vh;
   background-color: var(--color-lightgray);
 }
 
-.box {
-    margin-top:2em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-    "top top"
-    "left right";
-  max-width: 600px;
-  border-radius: 5%;
+box {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 div.topbox {
-  grid-area: top;
   padding: 1.8em;
   background-color: var(--color-white);
   font-family: var(--page-font);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
+div.leftbox {
+  background-color: var(--color-cyan);
+}
+
+div.rightbox {
+  background-color: var(--color-lightcyan);
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 
 .common {
@@ -49,27 +50,17 @@ div.topbox {
 div.common {
   color: var(--color-lightgray);
 }
+
 .topbox h1 {
   color: var(--color-cyan);
 }
 
-div.leftbox {
-  grid-area: left;
-  background-color: var(--color-cyan);
-  border-bottom-left-radius: 5%;
-}
-
-div.rightbox {
-  grid-area: right;
-  background-color: var(--color-lightcyan);
-  border-bottom-right-radius: 5%;
-}
-
-.rightbox ul{
+.rightbox ul {
   list-style-type: none;
-  font-size:.95em;
-  padding-left:0;
+  font-size: .95em;
+  padding-left: 0;
 }
+
 
 .sellingpoint {
   color: var(--color-brightyellow);
@@ -82,4 +73,60 @@ button {
   border: none;
   border-radius: 5px;
   width: 100%;
+  font-weight: bold;
+}
+
+.price {
+  color: var(--color-white);
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h2 {
+  color: white;
+  font-size: 1.2em;
+}
+
+@media screen and (min-width: 380px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    height: 100vh;
+    background-color: var(--color-lightgray);
+  }
+
+  .box {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "top top"
+      "left right";
+    max-width: 600px;
+    border-radius: 5%;
+  }
+
+  div.topbox {
+    grid-area: top;
+    padding: 1.8em;
+    background-color: var(--color-white);
+    font-family: var(--page-font);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  div.leftbox {
+    grid-area: left;
+    border-bottom-left-radius: 5%;
+  }
+
+  div.rightbox {
+    grid-area: right;
+    border-bottom-left-radius: 0%;
+  }
+
+
+
 }
