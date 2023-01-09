@@ -4,11 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\Users\\muyis\\Documents\\GitHub\\Mastering-HTML-CSS-JS\\FrontEndMasters\\product-preview-card-component-main\\index.html"
+            "file": "c:\\Users\\muyis\\Documents\\GitHub\\Mastering-HTML-CSS-JS\\FrontEndMasters\\single-price-grid-component\\index.html"
         }
     ]
 }
