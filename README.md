@@ -8,3 +8,5 @@ I'll be keeping a small log in the readme of the completed projects in here.
 | Digital Clock    | Date class. SetInterval. |
 | Countdown Timer  | Date class. SetInterval. |
 | QR Code UI       | CSS Practice Challenge.  |
+| Product Preview Card      | CSS Practice Challenge.  |
+| NFT Preview Card       | CSS Practice Challenge.  |
