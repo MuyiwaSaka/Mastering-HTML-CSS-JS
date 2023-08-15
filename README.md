@@ -7,4 +7,7 @@ I'll be keeping a small log in the readme of the completed projects in here.
 | StopWatch        | Date class. SetInterval. |
 | Digital Clock    | Date class. SetInterval. |
 | Countdown Timer  | Date class. SetInterval. |
-| QR Code UI       | CSS Practice Challenge.  |
+| QR Code UI       | Frontend Mastery.  |
+| Product Preview Card      | Frontend Mastery.  |
+| NFT Preview Card       | Frontend Mastery.  |
+| Single Price Grid Component       | Frontend Mastery.  |
