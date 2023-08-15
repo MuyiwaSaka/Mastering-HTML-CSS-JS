@@ -17,29 +17,34 @@ body {
   background-color: var(--color-lightgray);
 }
 
-box {
+.box {
   margin: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ 
 }
 
 div.topbox {
   padding: 1.8em;
   background-color: var(--color-white);
   font-family: var(--page-font);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 div.leftbox {
   background-color: var(--color-cyan);
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "header header"
+  "price duration"
+  "incentive incentive"
+  "button button";
 }
 
 div.rightbox {
   background-color: var(--color-lightcyan);
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .common {
@@ -50,9 +55,13 @@ div.rightbox {
 div.common {
   color: var(--color-lightgray);
 }
+.leftbox h2{
+  grid-area: header;
+}
 
 .topbox h1 {
   color: var(--color-cyan);
+  font-size: 2em;
 }
 
 .rightbox ul {
@@ -74,20 +83,32 @@ button {
   border-radius: 5px;
   width: 100%;
   font-weight: bold;
+  grid-area:button;
 }
 
 .price {
   color: var(--color-white);
   font-size: 2em;
   font-weight: 700;
+  grid-area: price;
+  justify-self:center;
+}
+.duration{
+  grid-area: duration;
+  align-self:center;
+  justify-self:start;
 }
 
+.incentive{
+  grid-area:incentive;
+  align-self:center;
+}
 h2 {
   color: white;
   font-size: 1.2em;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 420px) {
   body {
     display: flex;
     flex-direction: column;
@@ -126,7 +147,5 @@ h2 {
     grid-area: right;
     border-bottom-left-radius: 0%;
   }
-
-
 
 }
