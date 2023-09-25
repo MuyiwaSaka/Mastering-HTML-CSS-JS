@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Forum: The Beginning.</title>
+    <style lang="text/css">
+        
+
+        .forumform{
+            display: grid;
+            gap: 10px;
+            min-width: 320px;
+            max-width: 600px;
+        }
+
+        div.makecommunityform {
+            grid-template-areas:
+                'toplabel toplabel'
+                'toptext toptext'
+                'secondlabel secondlabel'
+                'secondtext secondtext'
+                'thirdlabel thirdlabel'
+                'thirdtext thirdtext'                
+                'parentboard parentboard'
+                'leftspace bpad'
+        }
+        
+        #lblcommname {
+            grid-area: toplabel
+        }
+
+        #txtCommunityName {
+            grid-area: toptext;
+        }
+
+        #lblcommdesc {
+            grid-area: secondlabel
+        }
+
+        #txtCommunityDescription {
+            grid-area: secondtext;
+        }
+
+        div.buttonpad {
+            display: grid;
+            grid-template-areas: "bleft bright";
+            gap: 10px;
+            grid-area: bpad;
+            justify-content: end;
+        }
+
+        div.buttonpad button {
+            padding: 5%;
+            min-width: 80px;
+        }
+
+        #btnSubmitCommFrm {
+            grid-area: bleft;
+        }
+
+        #btnResetCommFrm {
+            grid-area: bright;
+        }
+    </style>
+</head>
+
+<body>
+        <form action="" method="post">
+            <div class="forumform makecommunityform">
+        
+                <label for="txtCommunityName" id="lblcommname">Community Name</label>
+                <input type="text" id='txtCommunityName' placeholder='Enter Name of Community'>
+                <label for="txtShortUrl" id="lblShortUrl">Choose a readable Username/URL for the community.</label>
+                <input type="text" name="txtShortUrl" id="txtShortUrl">
+                <label for="txtCommunityDescription" id="lblcommdesc">Description</label>
+                <textarea rows=4 id='txtCommunityDescription'
+                    placeholder='Describe the Community. Minimum of 50 characters. Remember to make sure the description also complies with our standards for safe and ethical commenting. Failure to comply might result in your community being banned or locked.'></textarea>
+                <label for="selParentBoard"> Parent Community <em>(optional)</em>:</label>
+                <select name="selParentBoard" id="selParentBoard">
+                    <option value="0">Select Parent Community (Default: no Parent)</option>
+                </select>
+                <div class="buttonpad">
+                    <button type="submit" id='btnSubmitCommFrm'>Create Community</button><button type="reset"
+                        id='btnResetCommFrm'>Reset</button>
+                </div>
+                
+            </div>
+        </form>
+        
+</body>
+
+</html>

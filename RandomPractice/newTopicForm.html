@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum: New Topic Form</title>
+    <style lang="text/css">
+        .forumform{
+            display: grid;
+            gap: 10px;
+            min-width: 320px;
+            max-width: 600px;
+        }
+
+        div.makecommunityform {
+            grid-template-areas:
+                'toplabel toplabel'
+                'toptext toptext'
+                'secondlabel secondlabel'
+                'secondtext secondtext'
+                'parentboard parentboard'
+                'leftspace bpad'
+        }
+        
+        div.postformcore {
+            grid-template-areas:
+                'toplabel toplabel'
+                'toptext toptext'
+                'secondlabel secondlabel'
+                'secondtext secondtext'
+                'leftspace bpad'
+        }
+
+        #lblcommname, #lblheadertitle {
+            grid-area: toplabel
+        }
+
+        #txtCommunityName, #txtTitle {
+            grid-area: toptext;
+        }
+
+        #lblcommdesc, #lblpostbody {
+            grid-area: secondlabel
+        }
+
+        #txtCommunityDescription, #txtPostBody {
+            grid-area: secondtext;
+        }
+
+        div.buttonpad {
+            display: grid;
+            grid-template-areas: "bleft bright";
+            gap: 10px;
+            grid-area: bpad;
+            justify-content: end;
+        }
+
+        div.buttonpad button {
+            padding: 5%;
+            min-width: 80px;
+        }
+
+        #btnSubmitCommFrm {
+            grid-area: bleft;
+        }
+
+        #btnResetCommFrm {
+            grid-area: bright;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <div class="newpostform">
+        <div class="rulesheader">
+            <h3>Keep in Mind the Following Rules Regarding New Posts.</h3>
+            <p>Posting the following will get you banned (and/or reported to appropriate authorities):</p>
+            <ul class="ruleslist">
+                <li>Pornography or Disgusting Pictures or Videos</li>
+                <li>Promoting shady investments like HYIP, MLM.</li>
+                <li>Deliberate Posting of False Information.</li>
+                <li>Violating privacy of others by posting private pictures or information.</li>
+                <li>Attempts to bypass our censored word filters by misspellings.</li>
+                <li>Illegal acts, e.g scams, plagiarism, hacking, incitement, promoting secession.</li>
+            </ul>
+            <p>We will hide or limit the visibility of posts with the following characteristics:</p>
+            <ul class="ruleslist">
+                <li>Adverts or affiliate links outside marketplaces or areas where adverts are explicitly allowed.</li>
+            </ul>
+            Please use the following guideline to improve your posts:
+            <ul class="ruleslist">
+                <li>Search the forum before creating a new topic.</li>
+                <li>Post your topic in the right community and avoid derailing topics with off-topic comments.</li>
+                <li>Spell words correctly when you post</li>
+                <li>Try to use perfect grammar and punctuation.</li>
+            </ul>
+        </div>
+        <div class="forumform postformcore">
+            <label for="txtTitle" id="lblheadertitle">Header Title</label>
+            <input type="text" name="txtTitle" id="txtTitle" placeholder="Enter the Title of your Topic here.">
+            <label for="txtPostBody" id="lblpostbody">Enter Your Topic Content Here.</label>
+            <textarea name="txtPostBody" id="txtPostBody" cols="30" rows="10" placeholder="Enter Your Topic Content Here. Remember the guidelines and rules stated above."></textarea>
+            <div class="buttonpad">
+                <button type="submit">Submit</button>
+            </div>
+
+        </div>
+    </div>
+    </form>
+    
+</body>
+</html>
