@@ -18,8 +18,7 @@ body {
 }
 
 .box {
-  margin: 1em;
- 
+  margin: 1em; 
 }
 
 div.topbox {
@@ -34,7 +33,7 @@ div.leftbox {
   background-color: var(--color-cyan);
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
+  grid-template-areas:
   "header header"
   "price duration"
   "incentive incentive"

@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style lang="text/css">
-        div .postpanel{
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        :root{
+            --page-font: "Poppins", sans-serif;
+            --page-font-size: 16px;
+        }
+        .postpanel{
+            margin: 1em;
+            display: grid;
+            border: 1px red solid;
+            justify-content: center;
+        }
+        div .postpanel{            
             max-width: 800px;
         }
+
+        .created, .modified, .viewed{
+            display: inline;
+            margin:1em;
+        }
+
+        .topic_header{
+            margin-bottom:5px;
+        }
+        .topic_header h3{
+            font-family: var(--page-font);
+            font-size: 2em;
+            font-weight: 900;
+        }
+
         div .post{
             display: grid;
             /*border: 1px solid black;*/
             max-width: 800px;
-            padding:5px 5px 10px 5px;
+            padding:10px 5px 10px 5px;
+            font-family: var(--page-font);
+            line-height: 1.6;
             font-size: 1em;
+            font-weight: 400;
+            border-top:1px gray solid;
             grid-auto-columns: 20% auto;
             grid-template-areas: 'userbox message';
+        }
+
+        .first{
+            font-size: 3rem;
         }
 
         div .userbox{
@@ -33,12 +69,13 @@
         div .signature{
             grid-area:signature;
             justify-content: end;
+            font-size: 0.75em;
         }
 
         div.gravatar > img {
             justify-content: center;
             grid-area:gravatar;
-            border-radius: 5%;
+            border-radius: 15%;
             height: 70px;
         }
 
@@ -51,17 +88,15 @@
 <body>
     <div class="postpanel">
         <div class="topic_header">
-            <h3>Where can I find correct hookup in Ajah, Lagos?</h3>
-            <div class="created">Created 3 days ago</div> <div class="modified">Modified 2 days ago</div><div class="viewed">Viewed 98 times</div>
+            <h3>Where can I find correct ponmo in Ajah, Lagos?</h3>
+            <div class="created"><em>Created</em> 3 days ago</div> <div class="modified">Modified 2 days ago</div><div class="viewed">Viewed 98 times</div>
             
             
         </div>
         <!-- Posts -->
-        <div class="post">
+        <div class="first post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
-    
-                I have checked a bunch of places but so far nothing comes to mind.
+                No one shall be subjected to arbitrary arrest, detention or exile. Everyone is entitled in full equality to a fair and public hearing by an independent and impartial tribunal, in the determination of his rights and obligations and of any criminal charge against him. No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.
             </div>
             <div class="userbox">       
                 <div class="gravatar">
@@ -79,7 +114,7 @@
         </div>
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -99,7 +134,7 @@
         
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -120,7 +155,7 @@
         </div>
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -140,7 +175,7 @@
 
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -161,7 +196,7 @@
         </div>
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -181,7 +216,7 @@
 
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -202,7 +237,7 @@
         </div>
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -222,7 +257,7 @@
 
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
@@ -243,7 +278,7 @@
         </div>
         <div class="post">
             <div class="message">
-                Good day, guys. Where can I find a proper hookup? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
+                Good day, guys. Where can I find a proper ponmo? I have been in lagos for a short while and I feel the need to handle stuff (if you know what i mean)?
     
                 I have checked a bunch of places but so far nothing comes to mind.
             </div>
